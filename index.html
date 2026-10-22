@@ -129,6 +129,33 @@
   }
   .prop .body { flex: 1; display: flex; flex-direction: column; gap: 6px; }
 
+  /* ---------- Flujo lineal ---------- */
+  .flow { flex: 1; display: flex; align-items: center; gap: 24px; }
+  .step {
+    flex: 1; display: flex; flex-direction: column; gap: 16px;
+    background: var(--card); padding: 48px 40px;
+    border: 1px solid var(--line); border-top: 6px solid var(--navy);
+    min-height: 300px; justify-content: center;
+  }
+  .step .tag { font-size: 22px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-text); }
+  .step h3 { font-size: 48px; line-height: 1.15; }
+  .flow-arrow { flex: none; width: 96px; height: 48px; }
+
+  /* ---------- Árbol con bifurcación ---------- */
+  .tree { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .tree-split { width: 1664px; height: 80px; flex: none; }
+  .branches { width: 100%; display: flex; }
+  .branch { flex: 1; display: flex; flex-direction: column; align-items: center; }
+  .node {
+    width: 640px; text-align: center;
+    background: var(--card); padding: 20px 32px;
+    border: 1px solid var(--line); border-top: 6px solid var(--navy);
+  }
+  .node h3 { font-size: 36px; line-height: 1.2; }
+  .node.root { width: 480px; }
+  .node.root h3 { font-size: 48px; }
+  .v-arrow { width: 48px; height: 48px; flex: none; }
+
   /* ---------- Notas del orador (tecla N) ---------- */
   .slide aside { display: none; }
   .notes-panel {
@@ -173,7 +200,7 @@
   <!-- 1 · PORTADA -->
   <section class="slide light cover">
     <p class="eyebrow"></p>
-    <h1>[Título de la presentación]</h1>
+    <h1>Presentación</h1>
     <!-- <p class="lead">[Subtítulo: propósito de la exposición en una línea]</p> -->
     <hr class="rule">
     <div class="stack">
@@ -183,20 +210,113 @@
     <aside>Saludo protocolar al Sr. Presidente. Presentación de quien expone y del objetivo de la reunión.</aside>
   </section>
 
-  <!-- 2 · TEMARIO -->
-  <section class="slide light" style="gap:56px">
+  <!-- 2 · BIFURCACIÓN DESDE OVD -->
+  <section class="slide light" style="gap:40px">
     <div class="head">
-      <p class="eyebrow">Temario</p>
-      <h2>Ejes de la exposición</h2>
+      <h2>OVD</h2>
     </div>
-    <ol class="agenda">
-      <li><span class="n">01</span>[Contexto institucional]</li>
-      <li><span class="n">02</span>[Indicadores de gestión]</li>
-      <li><span class="n">03</span>[Avances y cronología]</li>
-      <li><span class="n">04</span>[Propuestas para consideración del Sr. Presidente]</li>
-    </ol>
-    <footer class="footer"><span>[Dependencia] · Presentación institucional</span><span class="num"></span></footer>
-    <aside>Recorrido breve de los temas a tratar.</aside>
+    <div class="tree">
+      <div class="node root"><h3>OVD</h3></div>
+      <svg class="tree-split" viewBox="0 0 1664 80" aria-hidden="true">
+        <path d="M832 0 V36 M416 36 H1248 M416 36 V70 M1248 36 V70" fill="none" stroke="#B8964A" stroke-width="4"/>
+        <polyline points="404,62 416,76 428,62" fill="none" stroke="#B8964A" stroke-width="4"/>
+        <polyline points="1236,62 1248,76 1260,62" fill="none" stroke="#B8964A" stroke-width="4"/>
+      </svg>
+      <div class="branches">
+        <!-- Rama 1 -->
+        <div class="branch">
+          <div class="node"><h3>Guardia Provincial</h3></div>
+          <svg class="v-arrow" viewBox="0 0 48 48" aria-hidden="true">
+            <line x1="24" y1="4" x2="24" y2="42" stroke="#B8964A" stroke-width="4"/>
+            <polyline points="12,30 24,44 36,30" fill="none" stroke="#B8964A" stroke-width="4"/>
+          </svg>
+          <div class="node"><h3>Gabinete Especializado</h3></div>
+          <svg class="v-arrow" viewBox="0 0 48 48" aria-hidden="true">
+            <line x1="24" y1="4" x2="24" y2="42" stroke="#B8964A" stroke-width="4"/>
+            <polyline points="12,30 24,44 36,30" fill="none" stroke="#B8964A" stroke-width="4"/>
+          </svg>
+          <div class="node"><h3>Acortamiento del tiempo procesal</h3></div>
+        </div>
+        <!-- Rama 2 -->
+        <div class="branch">
+          <div class="node"><h3>Relato o evidencia</h3></div>
+          <svg class="v-arrow" viewBox="0 0 48 48" aria-hidden="true">
+            <line x1="24" y1="4" x2="24" y2="42" stroke="#B8964A" stroke-width="4"/>
+            <polyline points="12,30 24,44 36,30" fill="none" stroke="#B8964A" stroke-width="4"/>
+          </svg>
+          <div class="node"><h3>Entrevista de investigación videograbada</h3></div>
+        </div>
+      </div>
+    </div>
+    <aside>Desde la OVD el circuito se bifurca. Rama 1: Guardia Provincial, luego Gabinete Especializado, con el resultado de acortar el tiempo procesal. Rama 2: relato o evidencia, que deriva en una entrevista de investigación videograbada.</aside>
+  </section>
+
+  <!-- 3 · CIRCUITO OVD → GABINETE → AGR -->
+  <section class="slide light">
+    <div class="head">
+      <!-- <p class="eyebrow">[Sección]</p> -->
+      <h2>Circuito de intervención</h2>
+    </div>
+    <div class="flow">
+      <div class="step">
+        <p class="tag">Paso 1</p>
+        <h3>OVD</h3>
+        <p class="small">Informe de riesgo</p>
+      </div>
+      <svg class="flow-arrow" viewBox="0 0 96 48" aria-hidden="true">
+        <line x1="4" y1="24" x2="84" y2="24" stroke="#B8964A" stroke-width="4"/>
+        <polyline points="68,8 88,24 68,40" fill="none" stroke="#B8964A" stroke-width="4"/>
+      </svg>
+      <div class="step">
+        <p class="tag">Paso 2</p>
+        <h3>Gabinete especializado en Violencia</h3>
+        <!-- <p class="small">Especialización en violencia</p> -->
+      </div>
+      <svg class="flow-arrow" viewBox="0 0 96 48" aria-hidden="true">
+        <line x1="4" y1="24" x2="84" y2="24" stroke="#B8964A" stroke-width="4"/>
+        <polyline points="68,8 88,24 68,40" fill="none" stroke="#B8964A" stroke-width="4"/>
+      </svg>
+      <div class="step">
+        <p class="tag">Paso 3</p>
+        <h3>AGR</h3>
+        <p class="small">Controla</p>
+      </div>
+    </div>
+    <!-- <footer class="footer"><span>[Dependencia] · Presentación institucional</span><span class="num"></span></footer> -->
+    <aside>Circuito: la OVD elabora el informe de riesgo, lo deriva al Gabinete especializado y de allí a AGR.</aside>
+  </section>
+
+  <!-- 4 · BIFURCACIÓN DESDE PERSONAL -->
+  <section class="slide light" style="gap:40px">
+    <div class="head">
+      <!-- <h2>[Título de la diapositiva]</h2> -->
+
+      
+    </div>
+    <div class="tree">
+      <div class="node root"><h3>Personal</h3></div>
+      <svg class="tree-split" viewBox="0 0 1664 80" aria-hidden="true">
+        <path d="M832 0 V36 M416 36 H1248 M416 36 V70 M1248 36 V70" fill="none" stroke="#B8964A" stroke-width="4"/>
+        <polyline points="404,62 416,76 428,62" fill="none" stroke="#B8964A" stroke-width="4"/>
+        <polyline points="1236,62 1248,76 1260,62" fill="none" stroke="#B8964A" stroke-width="4"/>
+      </svg>
+      <div class="branches">
+        <!-- Rama 1 -->
+        <div class="branch">
+          <div class="node"><h3>Régimen Juvenil Penal</h3></div>
+          <svg class="v-arrow" viewBox="0 0 48 48" aria-hidden="true">
+            <line x1="24" y1="4" x2="24" y2="42" stroke="#B8964A" stroke-width="4"/>
+            <polyline points="12,30 24,44 36,30" fill="none" stroke="#B8964A" stroke-width="4"/>
+          </svg>
+          <div class="node"><h3>Cuerpo de Supervisores</h3></div>
+        </div>
+        <!-- Rama 2 -->
+        <div class="branch">
+          <div class="node"><h3>Centro Judicial Este</h3></div>
+        </div>
+      </div>
+    </div>
+    <aside>Desde Personal se abren dos ramas. Rama 1: Régimen Juvenil Penal, que deriva en el Cuerpo de Supervisores. Rama 2: Centro Judicial Este.</aside>
   </section>
 
 </main>
