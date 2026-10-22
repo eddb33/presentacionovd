@@ -51,37 +51,22 @@
   .slide.light::before {
     content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 12px; background: var(--navy);
   }
-  /* Diapositiva oscura: filete vertical dorado */
-  .slide.dark {
-    background: var(--navy); color: var(--ivory);
-    padding-left: 192px; justify-content: center; gap: 40px;
-  }
-  .slide.dark::before {
+  /* Portada y cierre: contenido centrado con filete vertical dorado */
+  .slide.cover { padding-left: 192px; justify-content: center; gap: 40px; }
+  .slide.cover::after {
     content: ""; position: absolute; left: 128px; top: 128px; width: 6px; height: 824px; background: var(--gold);
-  }
-  .slide.statement {
-    background: var(--ivory-2); color: var(--navy);
-    padding: 128px 192px 160px; justify-content: center;
-  }
-  .slide.statement::before {
-    content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 12px; background: var(--navy);
   }
 
   /* ---------- Tipografía ---------- */
   .eyebrow { font-size: 24px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-text); }
-  .dark .eyebrow { letter-spacing: 4px; color: var(--gold-light); }
   .head { display: flex; flex-direction: column; gap: 16px; }
-  h1 { font-family: var(--serif); font-size: 96px; font-weight: 600; line-height: 1.1; }
+  h1 { font-family: var(--serif); font-size: 96px; font-weight: 600; line-height: 1.1; color: var(--navy); }
   h2 { font-family: var(--serif); font-size: 64px; font-weight: 600; line-height: 1.15; color: var(--navy); }
-  .dark h2 { font-size: 72px; color: var(--ivory); }
   h3 { font-family: var(--serif); font-size: 36px; font-weight: 600; color: var(--navy); }
   .lead { font-size: 32px; line-height: 1.45; max-width: 1300px; }
-  .dark .lead { color: var(--mist); line-height: 1.4; }
   .small { font-size: 24px; line-height: 1.5; color: var(--muted); }
-  .dark .small { color: var(--mist); }
   .rule { width: 160px; height: 2px; background: var(--gold); border: 0; }
-  .statement .rule { width: 120px; height: 4px; }
-  .big-num { font-family: var(--serif); font-size: 160px; font-weight: 400; line-height: 1; color: var(--gold-light); }
+  .big-num { font-family: var(--serif); font-size: 160px; font-weight: 400; line-height: 1; color: var(--gold-text); }
   .quote { font-family: var(--serif); font-size: 72px; font-weight: 400; line-height: 1.25; }
   .signature { font-size: 28px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #7A5D1C; }
   .stack { display: flex; flex-direction: column; gap: 8px; }
@@ -92,7 +77,6 @@
     display: flex; justify-content: space-between;
     font-size: 24px; color: var(--foot);
   }
-  .statement .footer { color: #5F6670; }
 
   /* ---------- Temario ---------- */
   .agenda { display: flex; flex-direction: column; }
@@ -187,14 +171,14 @@
 <main class="stage" id="stage">
 
   <!-- 1 · PORTADA -->
-  <section class="slide dark">
-    <p class="eyebrow">[Nombre de la dependencia]</p>
+  <section class="slide light cover">
+    <p class="eyebrow"></p>
     <h1>[Título de la presentación]</h1>
-    <p class="lead">[Subtítulo: propósito de la exposición en una línea]</p>
+    <!-- <p class="lead">[Subtítulo: propósito de la exposición en una línea]</p> -->
     <hr class="rule">
     <div class="stack">
-      <p style="font-size:30px">Exposición ante el Sr. Presidente de la Corte, [Dr. Nombre y Apellido]</p>
-      <p class="small">[Ciudad], [día] de [mes] de 2026</p>
+      <!-- <p style="font-size:30px">Exposición ante el Sr. Presidente de la Corte, [Dr. Nombre y Apellido]</p> -->
+      <!-- <p class="small">[Ciudad], [día] de [mes] de 2026</p> -->
     </div>
     <aside>Saludo protocolar al Sr. Presidente. Presentación de quien expone y del objetivo de la reunión.</aside>
   </section>
@@ -213,118 +197,6 @@
     </ol>
     <footer class="footer"><span>[Dependencia] · Presentación institucional</span><span class="num"></span></footer>
     <aside>Recorrido breve de los temas a tratar.</aside>
-  </section>
-
-  <!-- 3 · SEPARADOR DE SECCIÓN (duplicar por cada eje) -->
-  <section class="slide dark" style="gap:32px">
-    <p class="big-num">01</p>
-    <h2>[Título de la sección]</h2>
-    <p class="lead">[Breve descripción de lo que se abordará en este bloque]</p>
-    <aside>Separador de sección. Duplicar para cada eje del temario.</aside>
-  </section>
-
-  <!-- 4 · CONTENIDO -->
-  <section class="slide light">
-    <div class="head">
-      <p class="eyebrow">[Sección]</p>
-      <h2>[Título del tema]</h2>
-    </div>
-    <p class="lead">[Párrafo introductorio: la idea principal de esta diapositiva en dos o tres líneas.]</p>
-    <div class="cards">
-      <div class="card"><h3>[Punto clave 1]</h3><p class="small">[Detalle breve del punto, una o dos líneas.]</p></div>
-      <div class="card"><h3>[Punto clave 2]</h3><p class="small">[Detalle breve del punto, una o dos líneas.]</p></div>
-      <div class="card"><h3>[Punto clave 3]</h3><p class="small">[Detalle breve del punto, una o dos líneas.]</p></div>
-    </div>
-    <footer class="footer"><span>[Dependencia] · Presentación institucional</span><span class="num"></span></footer>
-    <aside>Diapositiva de contenido: idea central y tres puntos de apoyo.</aside>
-  </section>
-
-  <!-- 5 · INDICADORES -->
-  <section class="slide light">
-    <div class="head">
-      <p class="eyebrow">[Sección]</p>
-      <h2>[Indicadores principales del período]</h2>
-    </div>
-    <div class="kpis">
-      <div class="kpi"><p class="value">[__]</p><p class="label">[Indicador 1]</p><p class="small">[Breve explicación o comparación con el período anterior]</p></div>
-      <div class="kpi"><p class="value">[__]</p><p class="label">[Indicador 2]</p><p class="small">[Breve explicación o comparación con el período anterior]</p></div>
-      <div class="kpi"><p class="value">[__]</p><p class="label">[Indicador 3]</p><p class="small">[Breve explicación o comparación con el período anterior]</p></div>
-    </div>
-    <footer class="footer"><span>Fuente: [origen de los datos, período]</span><span class="num"></span></footer>
-    <aside>Cifras clave. Citar la fuente de cada dato.</aside>
-  </section>
-
-  <!-- 6 · TABLA -->
-  <section class="slide light">
-    <div class="head">
-      <p class="eyebrow">[Sección]</p>
-      <h2>[Datos comparativos]</h2>
-    </div>
-    <table class="data">
-      <thead>
-        <tr><th style="width:40%">[Concepto]</th><th class="r" style="width:20%">[2024]</th><th class="r" style="width:20%">[2025]</th><th class="r" style="width:20%">Variación</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>[Rubro 1]</td><td class="r">[__]</td><td class="r">[__]</td><td class="r">[__ %]</td></tr>
-        <tr><td>[Rubro 2]</td><td class="r">[__]</td><td class="r">[__]</td><td class="r">[__ %]</td></tr>
-        <tr><td>[Rubro 3]</td><td class="r">[__]</td><td class="r">[__]</td><td class="r">[__ %]</td></tr>
-        <tr><td>[Rubro 4]</td><td class="r">[__]</td><td class="r">[__]</td><td class="r">[__ %]</td></tr>
-        <tr class="total"><td>Total</td><td class="r">[__]</td><td class="r">[__]</td><td class="r">[__ %]</td></tr>
-      </tbody>
-    </table>
-    <footer class="footer"><span>Fuente: [origen de los datos, período]</span><span class="num"></span></footer>
-    <aside>Tabla comparativa. Destacar en la exposición solo la fila más relevante.</aside>
-  </section>
-
-  <!-- 7 · CRONOLOGÍA -->
-  <section class="slide light" style="gap:96px">
-    <div class="head">
-      <p class="eyebrow">[Sección]</p>
-      <h2>[Hitos y cronología]</h2>
-    </div>
-    <div class="timeline">
-      <div class="milestone"><p class="date">[Fecha]</p><p class="label">[Hito 1]</p><p class="small">[Descripción breve]</p></div>
-      <div class="milestone"><p class="date">[Fecha]</p><p class="label">[Hito 2]</p><p class="small">[Descripción breve]</p></div>
-      <div class="milestone"><p class="date">[Fecha]</p><p class="label">[Hito 3]</p><p class="small">[Descripción breve]</p></div>
-      <div class="milestone next"><p class="date">[Próximo]</p><p class="label">[Hito previsto]</p><p class="small">[Descripción breve]</p></div>
-    </div>
-    <footer class="footer"><span>[Dependencia] · Presentación institucional</span><span class="num"></span></footer>
-    <aside>Línea de tiempo: tres hitos cumplidos y uno previsto (marcado en dorado).</aside>
-  </section>
-
-  <!-- 8 · MENSAJE CENTRAL -->
-  <section class="slide statement">
-    <hr class="rule">
-    <p class="quote">[Mensaje central de la exposición: la idea que el Sr. Presidente debe retener, en una o dos líneas.]</p>
-    <p class="signature">[Dependencia]</p>
-    <footer class="footer"><span>[Dependencia] · Presentación institucional</span><span class="num"></span></footer>
-    <aside>Pausa. Enunciar la idea central antes de pasar a las propuestas.</aside>
-  </section>
-
-  <!-- 9 · PROPUESTAS -->
-  <section class="slide light">
-    <div class="head">
-      <p class="eyebrow">Para consideración del Sr. Presidente</p>
-      <h2>Propuestas</h2>
-    </div>
-    <div class="props">
-      <div class="prop"><p class="n">1</p><div class="body"><h3>[Propuesta 1]</h3><p class="small">[Fundamento breve y resultado esperado]</p></div></div>
-      <div class="prop"><p class="n">2</p><div class="body"><h3>[Propuesta 2]</h3><p class="small">[Fundamento breve y resultado esperado]</p></div></div>
-      <div class="prop"><p class="n">3</p><div class="body"><h3>[Propuesta 3]</h3><p class="small">[Fundamento breve y resultado esperado]</p></div></div>
-    </div>
-    <footer class="footer"><span>[Dependencia] · Presentación institucional</span><span class="num"></span></footer>
-    <aside>Propuestas concretas, cada una con su fundamento.</aside>
-  </section>
-
-  <!-- 10 · CIERRE -->
-  <section class="slide dark">
-    <h1>Muchas gracias</h1>
-    <hr class="rule">
-    <div class="stack">
-      <p style="font-size:32px">[Nombre y cargo de quien expone]</p>
-      <p class="small">[Dependencia] · [correo institucional] · [teléfono interno]</p>
-    </div>
-    <aside>Agradecimiento y apertura a preguntas.</aside>
   </section>
 
 </main>
