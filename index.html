@@ -156,6 +156,16 @@
   .node.root h3 { font-size: 48px; }
   .v-arrow { width: 48px; height: 48px; flex: none; }
 
+  /* ---------- Imágenes / gráficos ---------- */
+  .gallery { flex: 1; display: flex; align-items: center; justify-content: center; gap: 48px; }
+  .gallery.three { gap: 32px; }
+  .gallery.three img { height: 410px; }
+  .gallery img {
+    height: 560px; width: auto; display: block;
+    background: #FFFFFF; padding: 24px;
+    border: 1px solid var(--line); box-shadow: 0 8px 24px rgba(19, 35, 63, .08);
+  }
+
   /* ---------- Notas del orador (tecla N) ---------- */
   .slide aside { display: none; }
   .notes-panel {
@@ -223,7 +233,7 @@
         <polyline points="1236,62 1248,76 1260,62" fill="none" stroke="#B8964A" stroke-width="4"/>
       </svg>
       <div class="branches">
-        <!-- Rama 1 -->
+        
         <div class="branch">
           <div class="node"><h3>Guardia Provincial</h3></div>
           <svg class="v-arrow" viewBox="0 0 48 48" aria-hidden="true">
@@ -239,7 +249,7 @@
         </div>
         <!-- Rama 2 -->
         <div class="branch">
-          <div class="node"><h3>Relato o evidencia</h3></div>
+          <div class="node"><h3>Relato a evidencia</h3></div>
           <svg class="v-arrow" viewBox="0 0 48 48" aria-hidden="true">
             <line x1="24" y1="4" x2="24" y2="42" stroke="#B8964A" stroke-width="4"/>
             <polyline points="12,30 24,44 36,30" fill="none" stroke="#B8964A" stroke-width="4"/>
@@ -291,7 +301,7 @@
     <div class="head">
       <!-- <h2>[Título de la diapositiva]</h2> -->
 
-      
+
     </div>
     <div class="tree">
       <div class="node root"><h3>Personal</h3></div>
@@ -317,6 +327,16 @@
       </div>
     </div>
     <aside>Desde Personal se abren dos ramas. Rama 1: Régimen Juvenil Penal, que deriva en el Cuerpo de Supervisores. Rama 2: Centro Judicial Este.</aside>
+  </section>
+
+  <!-- 5 · GRÁFICOS -->
+  <section class="slide light">
+    <div class="gallery three">
+      <img src="images/edt%201.png" alt="Entrevistas de declaración testimonial: 429 en total, con la cantidad de EDT realizadas por mes">
+      <img src="images/edt%20final.png" alt="Utilización mensual de los turnos disponibles: turnos reservados y libres por mes, de enero a octubre">
+      <img src="images/oavd.png" alt="Solicitudes de intervención: 2.600 en total, con la evolución mensual 2025 y 2026">
+    </div>
+    <aside></aside>
   </section>
 
 </main>
